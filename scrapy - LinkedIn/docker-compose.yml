@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  scrapy:
+    build: .
+    volumes:
+      - .:/usr/src/app/
+      - backend-data:/usr/src/app/backend-data
+      - static:/static
+    ports:
+      - 8000:8000
+
+volumes:
+  backend-data:
+    driver: local
+  static:
